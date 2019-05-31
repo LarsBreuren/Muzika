@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1.page-header Welkom bij Muzika #{user.name}
+
+  article
+    p Hieronder staat je profiel
+        ul
+          li Naam: #{user.name} 
+          li Email adres: #{user.email} 
+          li Gebruikersnaam: #{user.username}
+          h2 Profielfoto
+          <img class="profile image" src="uploads/#{user.profileimage}">
+
+
+
+   
+
+
+
+
+
+
+
+
+
