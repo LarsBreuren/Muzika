@@ -9,7 +9,7 @@ const db = mongoose.connection;
 const UserSchema = mongoose.Schema({
 	username: {
 		type: String,
-		index: true
+		index: true // Maak username de index
 	},
 	password: {
 		type: String
@@ -25,7 +25,7 @@ const UserSchema = mongoose.Schema({
 	}
 });
 
-const User = module.exports = mongoose.model('User', UserSchema);
+const User = module.exports = mongoose.model('User', UserSchema); // Maak de model buiten deze file beschikbaar
 
 module.exports.getUserById = function(id, callback){
 	User.findById(id, callback);
@@ -42,8 +42,8 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
 	});
 }
 
-module.exports.createUser = function(newUser, callback){
-	bcrypt.genSalt(10, function(err, salt) {
+module.exports.createUser = function(newUser, callback){ 
+	bcrypt.genSalt(10, function(err, salt) { // Hash het wachtwoord door middel van bcrypt
     	bcrypt.hash(newUser.password, salt, function(err, hash) {
    			newUser.password = hash;
    			newUser.save(callback);

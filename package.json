@@ -15,6 +15,7 @@
     "express-messages": "*",
     "express-session": "^1.16.1",
     "express-validator": "*",
+    "http": "0.0.0",
     "http-errors": "~1.6.3",
     "mongodb": "*",
     "mongoose": "*",
