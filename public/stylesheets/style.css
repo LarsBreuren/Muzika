@@ -8,7 +8,6 @@
     border-color: #d6e9c6;
     list-style: none;
 }
-
 .error li{
 	padding: 15px;
     margin-bottom: 20px;
@@ -19,8 +18,20 @@
     border-color: #ebccd1;
     list-style: none;
 }
-
-.active{ color: blue;}
+#logo{ max-height: 75px; margin: 0 2em; }
+.navbar.navbar-default {
+    background-color: #191926;
+    border: none;
+}
+.navbar-nav > li > a {
+    padding: 30px 15px;
+}
+.navbar-default .navbar-nav > li > a{
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover{
+    color: red;
+}
 .profile-image {
     width: 300px;
     border-radius: 15px;
@@ -28,3 +39,22 @@
 
 ul{ list-style: none;}
 article{ border: 2px solid #000; padding: 2em;}
+
+form{
+    color: #000;
+}
+body{
+    height: 100vh;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+body .page{
+     border: 2px solid #000;
+     background-color: rgba( 255, 255, 255, 0.7);
+     padding: 2em;
+     width: 50%;
+     margin: auto;
+    }
+
+/* background-image from Hard news (defqon */
