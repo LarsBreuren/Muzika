@@ -21,8 +21,9 @@
 }
 
 .active{ color: blue;}
-.profile.image {
+.profile-image {
     width: 300px;
+    border-radius: 15px;
 }
 
 ul{ list-style: none;}
