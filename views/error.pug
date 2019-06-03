@@ -1,7 +1,8 @@
-extends layout
+extends partials/layout
 
 block content
   h1 Oops!
   h2= message
   h3= error.status
   pre #{error.stack}
+  include partials/footer

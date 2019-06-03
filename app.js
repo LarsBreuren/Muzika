@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public'))); //public als statische 
 
 //Sessions
 app.use(session({
-  resave: true,
+  resave: false,
   saveUninitialized: true,
   secret: 'ilikecats',
 }));

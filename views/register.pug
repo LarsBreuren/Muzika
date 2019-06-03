@@ -1,29 +1,36 @@
-extends layout
+extends partials/layout
 
 block content
     h2.page-header Registreren
-    p Please register using the form below
+    p  Registreer hieronder door middel van het formulier
         if errors
             each error, i in errors
                 div.alert.alert-danger #{error.msg}
+        
                 
     form(method='post', action='/users/register',enctype='multipart/form-data')
         .form-group
-        label Name
-        input.form-control(name='name', type='text', placeholder='Enter name')
+        label Voornaam
+        input.form-control(name='voornaam', type='text', placeholder='Voornaam')
         .form-group
-        label Email
-        input.form-control(name='email', type='email', placeholder='Enter email')
+        label Email adres
+        input.form-control(name='email', type='email', placeholder='Email adres')
         .form-group
-        label Username
-        input.form-control(name='username', type='text', placeholder='Enter username')
+        label Gebruikersnaam
+        input.form-control(name='gebruikersnaam', type='text', placeholder='gebruikersnaam')
         .form-group
-        label Password
-        input.form-control(name='password', type='password', placeholder='Enter password')
+        label Favoriete muziek genre
+        select.form-control(name='genre')
+            each genre in ['House', 'Hardstyle', 'Metal', 'Techno','jazz']
+                 option(value=i) #{genre}
         .form-group
-        label Confirm Password
-        input.form-control(name='password2', type='password', placeholder='Confirm password')
+        label Wachtwoord
+        input.form-control(name='password', type='password', placeholder='Wachtwoord')
         .form-group
-        label Profile image
-        input.form-control(name='profileimage', type='file' accept="image/*")
+        label Bevestig wachtwoord
+        input.form-control(name='password2', type='password', placeholder='Bevestig wachtwoord')
+        .form-group
+        label Profielfoto
+        input.form-control(name='profielfoto', type='file' accept="image/*")
+        <br><br>
         input.btn.btn-primary(type='submit', name='submit',value='register') 

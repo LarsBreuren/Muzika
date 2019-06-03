@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Passion+One&display=swap');
+h1,h2,h3{ font-family: 'Passion One', cursive;}
 .success li{  /* 1:19 timestamp om dit te fixen */
 	padding: 15px;
     margin-bottom: 20px;
@@ -18,7 +20,10 @@
     border-color: #ebccd1;
     list-style: none;
 }
-#logo{ max-height: 75px; margin: 0 2em; }
+#logo{ 
+    max-height: 75px; 
+    margin: 0 2em; 
+}
 .navbar.navbar-default {
     background-color: #191926;
     border: none;
@@ -36,10 +41,8 @@
     width: 300px;
     border-radius: 15px;
 }
-
 ul{ list-style: none;}
 article{ border: 2px solid #000; padding: 2em;}
-
 form{
     color: #000;
 }
@@ -52,9 +55,57 @@ body{
 body .page{
      border: 2px solid #000;
      background-color: rgba( 255, 255, 255, 0.7);
-     padding: 2em;
+     padding: 1em 2em;
      width: 50%;
      margin: auto;
+}
+.profile{ position: relative; padding-top: 2em; }
+.profile #genre {
+    position: absolute;
+    right: 0;
+    padding: 1em;
+    top: 0;
+}
+.profile #genre b{
+    background-color: #191926;
+    color: #fff;
+    padding: 1em;
+}
+.profile #genre h3{margin-top: 0;}
+footer{ margin-top: 1em; }
+footer p{ color: #817f7f;}
+
+
+
+@media (max-width:1200px){
+    body .page {
+        width: 80%;
     }
+}
+
+@media (max-width:991px){
+
+}
+
+@media (max-width:770px){
+    body .page {
+        width: 97%;
+        padding: .5em;
+    }
+    .profile #genre{
+        text-align: center;
+        position: relative;
+    }
+    .profile {
+        padding: .5em;
+    }
+    .profile-image {
+        width: 50%;
+    }
+    .profile ul{ padding: 0;}
+}
+
+@media (max-width:550px) {
+}
 
 /* background-image from Hard news (defqon */

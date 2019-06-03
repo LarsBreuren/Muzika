@@ -1,21 +1,25 @@
-extends layout
+extends partials/layout
 
 block content
-  h1.page-header Welkom bij Muzika #{user.name}
+  h1 Hi! #{user.voornaam},
+  h2.page-header Welkom bij Muzika 
 
-  article
-    p Hieronder staat je profiel
-        ul
-          li Naam: #{user.name} 
-          li Email adres: #{user.email} 
-          li Gebruikersnaam: #{user.username}
-          h2 Profielfoto
-          <img class="profile-image" src="uploads/#{user.profileimage}">
+  article.profile
+    div#genre
+      h3 Favoriete genre: 
+      b #{user.genre}
+    p
+     b Jouw details
+    ul
+      li Naam: #{user.voornaam} 
+      li Email adres: #{user.email} 
+      li Gebruikersnaam: #{user.gebruikersnaam}
+      li ID: #{user.id}
+      h2 Profielfoto
+      <img class="profile-image" src="uploads/#{user.profielfoto}">
 
-
-
-   
-
+    a(href="/users/delete") Profiel verwijderen
+  include partials/footer
 
 
 

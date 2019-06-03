@@ -22,6 +22,8 @@ html(lang='en')
             if user
              li(class=(title == 'Members' ? 'active' : ''))
                a(href='/') Profiel
+             li(class=(title == 'Over Muzika' ? 'active' : ''))
+               a(href='/users/over') Over Muzika
             if !user
              li(class=(title == 'Registreren' ? 'active' : ''))
                a(href='/users/register') Registreren

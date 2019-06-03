@@ -7,9 +7,9 @@ const db = mongoose.connection;
 
 // User Schema
 const UserSchema = mongoose.Schema({
-	username: {
+	gebruikersnaam: {
 		type: String,
-		index: true // Maak username de index
+		index: true // Maak gebruikersnaam de index
 	},
 	password: {
 		type: String
@@ -17,10 +17,13 @@ const UserSchema = mongoose.Schema({
 	email: {
 		type: String
 	},
-	name: {
+	voornaam: {
 		type: String
 	},
-	profileimage:{
+	genre:{
+		type: String
+	},
+	profielfoto:{
 		type: String
 	}
 });
@@ -31,8 +34,8 @@ module.exports.getUserById = function(id, callback){
 	User.findById(id, callback);
 }
 
-module.exports.getUserByUsername = function(username, callback){
-	const query = {username: username};
+module.exports.getUserBygebruikersnaam = function(gebruikersnaam, callback){
+	const query = {gebruikersnaam: gebruikersnaam};
 	User.findOne(query, callback);
 }
 

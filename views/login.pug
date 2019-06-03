@@ -1,4 +1,4 @@
-extends layout
+extends partials/layout
 
 block content
  h2.page-header Login
@@ -11,3 +11,5 @@ block content
    label Wachtwoord
    input.form-control(name='password', type='password', placeholder='Vul wachtwoord in')
   input.btn.btn-primary(type='submit', name='submit',value='Login')
+
+ include partials/footer
