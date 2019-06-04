@@ -14,11 +14,10 @@ block content
       li Naam: #{user.voornaam} 
       li Email adres: #{user.email} 
       li Gebruikersnaam: #{user.gebruikersnaam}
-      li ID: #{user.id}
       h2 Profielfoto
       <img class="profile-image" src="uploads/#{user.profielfoto}">
 
-    a(href="/users/delete") Profiel verwijderen
+    //- a(href="/users/delete") Profiel verwijderen
   include partials/footer
 
 

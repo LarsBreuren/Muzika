@@ -29,7 +29,7 @@ const UserSchema = mongoose.Schema({
 });
 
 const User = module.exports = mongoose.model('User', UserSchema); // Maak de model buiten deze file beschikbaar
-
+//Maak de volgende functies beschikbaar voor andere files
 module.exports.getUserById = function(id, callback){
 	User.findById(id, callback);
 }

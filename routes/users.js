@@ -5,16 +5,7 @@ const upload = multer({dest:'./public/uploads'}); //path voor uploads
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-
 let User = require('../models/user'); //Gebruik de usermodel
-
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-    user.find({}, function(err, docs){
-      if(err) res.json(err);
-      else res.render('index');
-    });
-  })
 
 router.get('/register', function(req, res, next) {
   res.render('register', {title: 'Registreren'}); //Render register pagina 
@@ -25,9 +16,24 @@ router.get('/login', function(req, res, next) {
 });
 
 router.get('/over', function(req, res, next) {
-  res.render('over', {title: 'Over Muzika'}); //Render over pagina
+  res.render('over', {title: 'Over Muzika'}); //Render over Muzika pagina
 });
-// Code uit de passport documentatie gehaald
+
+// router.get('/delete', (req, res) => { 
+//   const id = -> User id req nog niet werkend, functie wel operationeel
+//   User.findOneAndRemove({_id: id }, (err) => {
+//     if (err) {
+//       console.log(err)
+//       res.status(500).send()
+//     } else {
+//       console.log('Profiel verwijderd')
+//       return res.status(200).send()
+//     }
+//   })
+// })
+
+
+// Volgende code uit de passport documentatie en tutorial gehaald
 router.post('/login',
   passport.authenticate('local',{failureRedirect:'/users/login', failureFlash: 'Verkeerde gegevens'}),
   function(req, res) {
@@ -44,19 +50,6 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
-
-router.get('/delete', (req, res) => {
-  const id = user.id
-  User.findOneAndRemove({_id: id }, (err) => {
-    if (err) {
-      console.log(err)
-      res.status(500).send()
-    } else {
-      console.log('User removed')
-      return res.status(200).send()
-    }
-  })
-})
 
 passport.use(new LocalStrategy(function(gebruikersnaam, password, done){
   User.getUserBygebruikersnaam(gebruikersnaam, function(err, user){
@@ -76,6 +69,7 @@ passport.use(new LocalStrategy(function(gebruikersnaam, password, done){
   });
 }));
 
+
 router.post('/register', upload.single('profielfoto'), function(req, res, next) {
   let voornaam = req.body.voornaam; //Stop de form data in variabelen
   let email = req.body.email;
@@ -89,7 +83,7 @@ router.post('/register', upload.single('profielfoto'), function(req, res, next) 
   	var profielfoto = req.file.filename;
   } else { // Geen foto -> default foto
   	console.log('No File Uploaded...');
-  	var profielfoto = 'noimage.jpg';
+  	var profielfoto = 'standaard.jpg';
   }
 
   // Form validator die check of alles ingevuld en correct is.
@@ -117,23 +111,21 @@ router.post('/register', upload.single('profielfoto'), function(req, res, next) 
       password: password,
       profielfoto: profielfoto
     });
-    User.createUser(newUser, function(err, user){ // Gebruik de model uit user.js
+    User.createUser(newUser, function(err, user){ // Gebruik createUser van usermodel
       if(err) throw err
       console.log(user);
     });
 
 req.flash('succes', 'je bent geregistreerd en kan inloggen'); // Melding voor de gebruiker
     res.location('/');
-    res.redirect('/'); // Redirect naar de homepagina zodat er ingelogd kan worden
+    res.redirect('/'); // Redirect naar de homepagina zodat er direct ingelogd kan worden
   }
 });
 
 router.get('/logout', function(req, res){ // Als er naar (users)/logout genavigeerd wordt voer dit uit
   req.logout();
-  req.flash('succes', 'Je bent nu uitgelogd'); 
-  res.redirect('/users/login');
+  req.flash('succes', 'Je bent nu uitgelogd'); //Melding van logout
+  res.redirect('/users/login'); //Redirect naar login
 });
-
-
 
 module.exports = router; //Vanaf app.js toegang tot deze file

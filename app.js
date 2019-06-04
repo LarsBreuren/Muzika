@@ -7,33 +7,27 @@ const session = require('express-session'); //Session middleware
 const passport = require('passport'); //Gebruikt voor authentication
 const expressValidator = require('express-validator'); //Form validator
 const flash = require('connect-flash'); //Pop-ups
-const mongo = require('mongodb'); 
 const mongoose = require('mongoose'); 
-const pug = require('pug');
-const http = require('http')
 const db = mongoose.connection;
-
 
 const app = express(); //Nieuwe express instance
 
 //Split de app.js voor overzicht
-const indexRouter = require('./routes/index'); //Gebruik index.js
-const usersRouter = require('./routes/users'); //Gebruik users.js
+const indexRouter = require('./routes/index'); //Gebruik index.js (voor homepage/profiel)
+const usersRouter = require('./routes/users'); //Gebruik users.js (voor user functies)
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views')); //Laad templates uit de views map
+app.set('views', path.join(__dirname, 'views')); //Haal templates uit de views map
 app.set('view engine', 'pug'); //gebruik pug als generator
 
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(bodyParser.json()); //Mogelijkheid om JSON te parsen
 app.use(cookieParser()); //Voeg een cookie toe aan de requests
 app.use(express.static(path.join(__dirname, 'public'))); //public als statische folder
 
 //Sessions
 app.use(session({
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false, // niks veranderd -> niks opslaan
   secret: 'ilikecats',
 }));
 
@@ -44,7 +38,7 @@ app.use(passport.session());
 // Express Validator (uit de documentatie)
 app.use(expressValidator({
   errorFormatter: function(param, msg, value) {
-      var namespace = param.split('.')
+      let namespace = param.split('.')
       , root    = namespace.shift()
       , formParam = root;
 
@@ -59,7 +53,7 @@ app.use(expressValidator({
   }
 }));
 
-app.use(require('connect-flash')()); //Gebruik connect flash
+app.use(flash()); //Gebruik connect flash
 app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
   next();
@@ -71,7 +65,7 @@ app.get('*', function(req, res, next){
 });
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter); //Voor het opdelen van app.js hier de path aangeven
+app.use('/users', usersRouter); //Voor het opdelen van app.js 
 
 // Forward 404's naar de error handlers
 app.use(function(req, res, next) {
@@ -82,9 +76,9 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   // set locals
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.flash('error');
 
-  // render the error page
+  // render de error pagina
   res.status(err.status || 500);
   res.render('error');
 });
