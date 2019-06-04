@@ -7,12 +7,42 @@ Basicly what it does ask for your preferences in terms of music and what kind of
 With this information the app will generate and recommand other users as possible matches.
 In the end you decide wether you'll go looking for a relationship or just go have fun with people with the same taste in music/festivals.
 
+```
 ## Getting started
+### prerequisites
+Git
+Node
+NPM
+MongoDB
+Any text/code editor
+
 1. Clone this repository
 2. Head to your terminal/command prompt and navigate to the Muzika folder ( using cd ).
 3. Use the "npm install" command to install the used packages.
 4. Use the "nodemon" command to startup the server.
 5. Open your browser and navigate to localhost:5000.
+
+###Used dependencie:
+     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "*",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-messages": "*",
+    "express-session": "^1.16.1",
+    "express-validator": "*",
+    "http-errors": "~1.6.3",
+    "mongodb": "*",
+    "mongoose": "*",
+    "morgan": "~1.9.1",
+    "multer": "*",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
+    "pug": "^2.0.3"
+
+```
 
 ## Run examples and tests
 When the installation is complete and you're at localhost:5000 you are allready able to sign up and login to your account.
