@@ -25,7 +25,7 @@ Any text/code editor
 ```
 ##Used dependencie:
 ```
-     "bcryptjs": "^2.4.3",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "connect-flash": "*",
     "cookie-parser": "~1.4.4",
@@ -43,7 +43,6 @@ Any text/code editor
     "passport-http": "*",
     "passport-local": "*",
     "pug": "^2.0.3"
-
 ```
 
 ## Run examples and tests
