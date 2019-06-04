@@ -24,6 +24,9 @@ block content
             each genre in ['House', 'Hardstyle', 'Metal', 'Techno','jazz']
                  option(value=i) #{genre}
         .form-group
+        label Leeftijd
+        input.form-control(name='leeftijd', type='number', placeholder='leeftijd' min='1')     
+        .form-group
         label Wachtwoord
         input.form-control(name='password', type='password', placeholder='Wachtwoord')
         .form-group

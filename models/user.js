@@ -23,6 +23,9 @@ const UserSchema = mongoose.Schema({
 	genre:{
 		type: String
 	},
+	leeftijd:{
+		type: Number
+	},
 	profielfoto:{
 		type: String
 	}

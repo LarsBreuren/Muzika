@@ -75,6 +75,7 @@ router.post('/register', upload.single('profielfoto'), function(req, res, next) 
   let email = req.body.email;
   let gebruikersnaam = req.body.gebruikersnaam;
   let genre = req.body.genre;
+  let leeftijd = req.body.leeftijd;
   let password = req.body.password;
   let password2 = req.body.password2; 
 
@@ -92,6 +93,7 @@ router.post('/register', upload.single('profielfoto'), function(req, res, next) 
   req.checkBody('email','Email is niet geldig').isEmail();
   req.checkBody('gebruikersnaam','Gebruikersnaam is verplicht').notEmpty();
   req.checkBody('genre','Genre is verplicht').notEmpty();
+  req.checkBody('leeftijd','Leeftijd is verplicht').isNumeric();
   req.checkBody('password','Wachtwoord is verplicht').notEmpty();
   req.checkBody('password2','Wachtwoorden komen niet overeen').equals(req.body.password); // Wachtwoord check
 
@@ -108,6 +110,7 @@ router.post('/register', upload.single('profielfoto'), function(req, res, next) 
       email: email,
       gebruikersnaam: gebruikersnaam,
       genre: genre,
+      leeftijd: leeftijd,
       password: password,
       profielfoto: profielfoto
     });
@@ -128,4 +131,4 @@ router.get('/logout', function(req, res){ // Als er naar (users)/logout genavige
   res.redirect('/users/login'); //Redirect naar login
 });
 
-module.exports = router; //Vanaf app.js toegang tot deze file
+module.exports = router; //Export deze file
