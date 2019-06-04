@@ -25,7 +25,7 @@ Any text/code editor
 5. Use the "nodemon" command to startup the server.
 6. Open your browser and navigate to localhost:5000.
 ```
-### Used dependencie:
+### Used dependencies:
 ```
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
