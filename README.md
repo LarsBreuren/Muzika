@@ -1,6 +1,7 @@
 # Project tech website | Muzika
 Muzika is a dating app for people who are music minded.
 With this app you can meet other music lovers and go to a festival together.
+![muzikaimg](https://user-images.githubusercontent.com/43336468
 
 ## Overview
 Basicly what it does ask for your preferences in terms of music and what kind of person you are looking for.
