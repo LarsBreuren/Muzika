@@ -10,20 +10,21 @@ In the end you decide wether you'll go looking for a relationship or just go hav
 ## Getting started
 ### prerequisites
 ```
-
 Git
 Node
 NPM
 MongoDB
 Any text/code editor
-
+```
+### Installation
+```
 1. Clone this repository
 2. Head to your terminal/command prompt and navigate to the Muzika folder ( using cd ).
 3. Use the "npm install" command to install the used packages.
 4. Use the "nodemon" command to startup the server.
 5. Open your browser and navigate to localhost:5000.
 ```
-##Used dependencie:
+### Used dependencie:
 ```
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
