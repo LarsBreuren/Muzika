@@ -28,6 +28,7 @@ The style.css is custom styling to maintain the Muzika branding, bootstrap is re
 
 ## Credits
 Lars Breuren | CMD student HvA
+
 Eduonix Learning Solutions | For using their User login system tutorial @ https://www.youtube.com/watch?v=hb26tQPmPl4.
 
 
