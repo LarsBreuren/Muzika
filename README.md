@@ -1,27 +1,33 @@
 # Project tech website | Muzika
-Dit is mijn website/repository voor project Tech. 
-Muzika is een datingapp voor muziekliefhebbers die graag mensen willen ontmoeten met dezelfde muzieksmaak.
-Mijn project is opgebouwd met het NodeJS framework Express.
+Muzika is a dating app for people who are music minded.
+With this app you can meet other music lovers and go to a festival together.
 
-## Installeren
-1. Clone de repository.
-2. Open de folder in je commandprompt/terminal.
-3. Installeer de packages met het command "npm install".
-3. Start de server met het command "nodemon". 
-4. Navigeer naar localhost:5000 in je browser.
+## Overview
+Basicly what it does ask for your preferences in terms of music and what kind of person you are looking for.
+With this information the app will generate and recommand other users as possible matches.
+In the end you decide wether you'll go looking for a relationship or just go have fun with people with the same taste in music/festivals.
 
-## Testen
-Om te testen of de app naar behoren werkt dien je de installatie te volgen en te navigeren naar localhost:5000. Door een account te maken en in te loggen kan je de functionaliteiten van de app testen.
+## Getting started
+1. Clone this repository
+2. Head to your terminal/command prompt and navigate to the Muzika folder ( using cd ).
+3. Use the "npm install" command to install the used packages.
+4. Use the "nodemon" command to startup the server.
+5. Open your browser and navigate to localhost:5000.
 
-## Style sheets
-De styling van de site bestaat voornamelijk uit de style.css file, daarnaast is er ook een bootstrap css aanwezig voor de basis opmaak van bootstrap.
-In style.css staan ook de mediaqueries.
+## Run examples and tests
+When the installation is complete and you're at localhost:5000 you are allready able to sign up and login to your account.
+If this doesn't give any problems you're good to go. 
 
-## Gemaakt met
-De website is gemaakt met Node.js en Express.
-In combinatie met PUG worden de pagina's gegenereerd.
-Voor de basis layout is bootstrap gebruikt.
+## Design goals
+Muzika is designed for music minded people and the mail goal is to connect people. The design goal is to make the app available for all who love music, easy design and relevant outcome.
 
-## Auteur
+## Detailed usage 
+To start off, Muzika is build with Node.js & express. I've used PUG to generate the templates and bootstrap for a simple but responsive layout. For the login  i've used passport & bcrypt. For the register form multer and express-validator were used.
+As for styling there are 2 .css files, one style.css and a bootstrap.css. 
+The style.css is custom styling to maintain the Muzika branding, bootstrap is regular bootstrap style to handle the layout.
+
+## Credits
 Lars Breuren | CMD student HvA
+Eduonix Learning Solutions | For using their User login system tutorial @ https://www.youtube.com/watch?v=hb26tQPmPl4.
+
 
