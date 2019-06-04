@@ -7,9 +7,10 @@ Basicly what it does ask for your preferences in terms of music and what kind of
 With this information the app will generate and recommand other users as possible matches.
 In the end you decide wether you'll go looking for a relationship or just go have fun with people with the same taste in music/festivals.
 
-```
 ## Getting started
 ### prerequisites
+```
+
 Git
 Node
 NPM
@@ -21,8 +22,9 @@ Any text/code editor
 3. Use the "npm install" command to install the used packages.
 4. Use the "nodemon" command to startup the server.
 5. Open your browser and navigate to localhost:5000.
-
-###Used dependencie:
+```
+##Used dependencie:
+```
      "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "connect-flash": "*",
