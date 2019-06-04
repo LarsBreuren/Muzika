@@ -80,10 +80,8 @@ router.post('/register', upload.single('profielfoto'), function(req, res, next) 
   let password2 = req.body.password2; 
 
   if(req.file){ // Als er een foto geupload is voer dan dit uit
-  	console.log('Uploading File...');
   	var profielfoto = req.file.filename;
   } else { // Geen foto -> default foto
-  	console.log('No File Uploaded...');
   	var profielfoto = 'standaard.jpg';
   }
 
