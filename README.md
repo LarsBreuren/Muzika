@@ -21,8 +21,9 @@ Any text/code editor
 1. Clone this repository
 2. Head to your terminal/command prompt and navigate to the Muzika folder ( using cd ).
 3. Use the "npm install" command to install the used packages.
-4. Use the "nodemon" command to startup the server.
-5. Open your browser and navigate to localhost:5000.
+4. Make a MongoDB collection called muzika
+5. Use the "nodemon" command to startup the server.
+6. Open your browser and navigate to localhost:5000.
 ```
 ### Used dependencie:
 ```
