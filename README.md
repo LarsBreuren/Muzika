@@ -51,12 +51,19 @@ Any text/code editor
 
 ## Database scheme
 _id: ObjectId("23qre2fwedtg4we")
+
 voornaam: "lars" string
+
 email: "larsbreuren@gmail.com" string
+
 gebruikersnaam: "Lars97" string
+
 genre: "Hardstyle" string
+
 leeftijd: "22" number
+
 password: "$2a$10$XjtfojE5ATDCGuI8H1Gmy.kHQRcpEBhoZcFd.BjrEWDHDR5sOEMTi" string - hashed
+
 profielfoto: "e332b7bc0c4e6e3765a8f6479a7637c5" string - multer
 
 ## Run examples and tests
